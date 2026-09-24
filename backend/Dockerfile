@@ -9,8 +9,7 @@ WORKDIR /build
 
 COPY requirements.txt .
 
-RUN python -m pip install --upgrade pip \
-    && python -m pip install --prefix=/install -r requirements.txt
+RUN python -m pip install --prefix=/install -r requirements.txt
 
 
 FROM python:3.12-slim AS runtime
