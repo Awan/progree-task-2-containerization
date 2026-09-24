@@ -1,5 +1,7 @@
 # Progree Internship — Task 2: Application Containerization & Asset Optimization
 
+[![Build and Publish Container Images](https://github.com/Awan/progree-task-2-containerization/actions/workflows/publish-images.yml/badge.svg)](https://github.com/Awan/progree-task-2-containerization/actions/workflows/publish-images.yml)
+
 A modular, multi-container web application environment built for the Progree internship Task 2 assessment.
 
 ## Objective
