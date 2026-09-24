@@ -48,6 +48,9 @@ jobs:
           labels: |
             org.opencontainers.image.title=Progree Task 2 Backend
             org.opencontainers.image.description=FastAPI backend for the Progree Task 2 containerized application
+          annotations: |
+            org.opencontainers.image.title=Progree Task 2 Backend
+            org.opencontainers.image.description=FastAPI backend for the Progree Task 2 containerized application
 
       - name: Build and push backend image
         uses: docker/build-push-action@v7
@@ -57,6 +60,7 @@ jobs:
           push: true
           tags: ${{ steps.backend-meta.outputs.tags }}
           labels: ${{ steps.backend-meta.outputs.labels }}
+          annotations: ${{ steps.backend-meta.outputs.annotations }}
           cache-from: type=gha,scope=backend
           cache-to: type=gha,mode=max,scope=backend
 
@@ -72,6 +76,9 @@ jobs:
           labels: |
             org.opencontainers.image.title=Progree Task 2 Frontend
             org.opencontainers.image.description=Vite frontend served by Nginx for the Progree Task 2 containerized application
+          annotations: |
+            org.opencontainers.image.title=Progree Task 2 Frontend
+            org.opencontainers.image.description=Vite frontend served by Nginx for the Progree Task 2 containerized application
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v7
@@ -81,5 +88,6 @@ jobs:
           push: true
           tags: ${{ steps.frontend-meta.outputs.tags }}
           labels: ${{ steps.frontend-meta.outputs.labels }}
+          annotations: ${{ steps.frontend-meta.outputs.annotations }}
           cache-from: type=gha,scope=frontend
           cache-to: type=gha,mode=max,scope=frontend
