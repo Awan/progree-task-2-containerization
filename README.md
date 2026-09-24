@@ -71,6 +71,22 @@ The frontend is the only service published to the host.
 
 ![Progree application health](docs/screenshots/04-progree-health.jpg)
 
+### GitHub Container Registry
+
+![Progree GitHub Container Registry packages](docs/screenshots/05-github-container-registry.jpg)
+
+The published images were verified by pulling the `latest` tags directly from GitHub Container Registry (GHCR):
+
+```text
+ghcr.io/awan/progree-task-2-backend:latest
+ghcr.io/awan/progree-task-2-frontend:latest
+```
+
+Both images were successfully pulled from GHCR, confirming that the GitHub Actions workflow built and published the application images successfully.
+
+For reproducible deployments, immutable image digests or version-specific image tags can be used instead of the mutable `latest` tag.
+
+
 ## Technology Stack
 
 * Docker
